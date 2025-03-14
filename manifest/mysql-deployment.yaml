@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql:5.7
+          image: kamani3/paymybuddy-db:latest
           envFrom:
             - configMapRef:
                 name: mysql-config
