@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql:8.0  # 🔹 Correction ici
+          image: mysql:5.7
           envFrom:
             - configMapRef:
                 name: mysql-config
@@ -46,10 +46,10 @@ kind: Service
 metadata:
   name: mysql
 spec:
-  type: NodePort  # 🔹 Modification ici
+  type: NodePort
   selector:
     app: mysql
   ports:
     - port: 3306
       targetPort: 3306
-      nodePort: 30006  # 🔹 Port exposé
+      nodePort: 30006 

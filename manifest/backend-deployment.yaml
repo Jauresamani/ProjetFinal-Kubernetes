@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: safouane95/paymybuddy-backend:latest
+          image: kamani3/paymybuddy-backend:latest
           envFrom:
             - configMapRef:
                 name: backend-config
@@ -32,10 +32,10 @@ kind: Service
 metadata:
   name: backend
 spec:
-  type: NodePort  # 🔹 Modification ici
+  type: NodePort  
   selector:
     app: backend
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 30080  # 🔹 Port exposé
+      nodePort: 30080  
